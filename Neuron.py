@@ -32,6 +32,7 @@ class Neuron:
     def get_output(self):
         return self.output
 
+    #Actualizamos la neurona al realizar la backpropagation de la red
     def update(self):
         for i in range(len(self.weights)):
             self.weights[i]=self.weights[i]+(self.lr*self.delta*self.inputs[i])
@@ -83,7 +84,7 @@ class Neuron:
         print("Delta: "+str(self.delta))
         print("Function: "+self.f.print())
         print("Last Output :"+str(self.output))
-
+    #Función que computa el output de la neurona
     def compute(self):
         if len(self.inputs)==len(self.weights):
             result = 0
